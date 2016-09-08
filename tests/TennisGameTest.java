@@ -228,7 +228,7 @@ public class TennisGameTest {
 	}
 	
 	@Test
-	public void testTennisGame_Player1WinsAdvantage_Score_Deuce() throws TennisGameException{
+	public void testTennisGame_Player1WinsAdvantage_Score_Player1HasAdvantage() throws TennisGameException{
 		//Arrange
 		TennisGame game = new TennisGame();
 		//Act
@@ -248,7 +248,7 @@ public class TennisGameTest {
 	}
 	
 	@Test
-	public void testTennisGame_Player2WinsAdvantage_Score_Deuce() throws TennisGameException{
+	public void testTennisGame_Player2WinsAdvantage_Score_Player2HasAdvantage() throws TennisGameException{
 		//Arrange
 		TennisGame game = new TennisGame();
 		//Act
