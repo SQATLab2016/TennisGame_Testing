@@ -62,10 +62,10 @@ public class TennisGame {
 // "40 - love", "love - 40"
 // "30 - 15", "15 - 30"
 // "40 - 15", "15 - 40"
-// "player1 has advantage"
-// "player2 has advantage"
-// "player1 wins"
-// "player2 wins"
+// "player1 has advantage" x
+// "player2 has advantage" x
+// "player1 wins" x
+// "player2 wins" x
 		
 			String player1Score = getScore(player1Points);
 			String player2Score = getScore(player2Points);
@@ -83,9 +83,9 @@ public class TennisGame {
 			if (player1Points >= 4 && player1Points - player2Points == 1)
 				return "player1 has advantage";
 			
-			if (player2Points > 4 && player2Points - player1Points == 1)
+			if (player2Points >= 4 && player2Points - player1Points == 1)
 				return "player2 has advantage";							
 			
-			return  player2Score + " - " + player1Score ;
+			return  player1Score + " - " + player2Score ;
 	}
 }
