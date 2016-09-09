@@ -3,7 +3,21 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TennisGameTest {
-
+	
+// Here is the format of the scores: "player1Score - player2Score"
+// "love - love"
+// "15 - 15"
+// "30 - 30"
+// "deuce"
+// "15 - love", "love - 15"
+// "30 - love", "love - 30"
+// "40 - love", "love - 40"
+// "30 - 15", "15 - 30"
+// "40 - 15", "15 - 40"
+// "player1 has advantage"
+// "player2 has advantage"
+// "player1 wins"
+// "player2 wins"
 	@Test
 	public void testTennisGame_Start() {
 		//Arrange
