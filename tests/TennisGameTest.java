@@ -33,20 +33,21 @@ public class TennisGameTest {
 		//Arrange
 		TennisGame game = new TennisGame();
 		
-		game.player1Scored();
-		game.player1Scored();
-		game.player1Scored();
-		
 		game.player2Scored();
 		game.player2Scored();
 		game.player2Scored();
 		
 		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
 		game.player2Scored();
+
+		
 		//Act
 		String score = game.getScore() ;
 		// Assert
-		assertEquals("Tie score incorrect", "deuce", score);		
+		assertEquals("Tie score incorrect", "player2 has advantage", score);		
 	}
 	
 	@Test (expected = TennisGameException.class)
@@ -58,8 +59,10 @@ public class TennisGameTest {
 		game.player1Scored();
 		game.player1Scored();
 		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
 		//Act
 		// This statement should cause an exception
-		game.player1Scored();			
+		game.player1Scored();
 	}		
 }
