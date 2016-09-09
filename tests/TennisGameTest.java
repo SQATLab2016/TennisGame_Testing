@@ -93,7 +93,7 @@ public class TennisGameTest {
 		//Act
 		String score = game.getScore();
 		//Assert
-		assertEquals("Player1´s score is incorrect!","player1 has advantage",score);
+		assertEquals("Player1Â´s score is incorrect!","player1 has advantage",score);
 	}
 	
 	@Test
@@ -104,7 +104,7 @@ public class TennisGameTest {
 		//Act
 		String score = game.getScore();
 		//Assert
-		assertEquals("Player1´s score is incorrect!","15 - love",score);
+		assertEquals("Player1Â´s score is incorrect!","15 - love",score);
 	}
 	
 	@Test
@@ -126,6 +126,22 @@ public class TennisGameTest {
 		game.player1Scored();
 		game.player2Scored();
 
+		//Act
+		String score = game.getScore();
+		//Assert
+		assertEquals("deuce",score);
+	}
+	
+	@Test
+	public void testTennisGame_EachPlayerScores3_Score_deuce() throws TennisGameException{
+		//Arrange
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
 		//Act
 		String score = game.getScore();
 		//Assert
