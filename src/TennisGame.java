@@ -77,15 +77,19 @@ public class TennisGame {
 					return "player2 wins";
 			}
 			
-			if (player1Points >= 4 && player1Points == player2Points)
+			if (player1Points >= 3 && player1Points == player2Points) //correction made, it should be equal and greater than 3 instead of 4 using test case 'testTennisGame_EachPlayerWin3Points_Score_Deuce()'
+																	 // By Aniqa Rehman - 9-9-2016
 				return "deuce";
 			
 			if (player1Points >= 4 && player1Points - player2Points == 1)
 				return "player1 has advantage";
 			
-			if (player2Points > 4 && player2Points - player1Points == 1)
+			if (player2Points >= 4 && player2Points - player1Points == 1) //correction made, it should be equal and greater using test case 'testTennisGame_Player2hasAdvantage()'
+																		 // By Aniqa Rehman - 9-9-2016
 				return "player2 has advantage";							
 			
-			return  player2Score + " - " + player1Score ;
+			return  player1Score + " - " + player2Score ;   //correction made, it should be player1Score + " - " + player2Score instead of player2Score + " - " + player1Score
+															// using test case 'testTennisGame_Score15_40()'
+			 												// By Aniqa Rehman - 9-9-2016
 	}
 }
