@@ -77,7 +77,7 @@ public class TennisGame {
 					return "player2 wins";
 			}
 			
-			if (player1Points >= 4 && player1Points == player2Points)
+			if (player1Points >= 3 && player1Points == player2Points)
 				return "deuce";
 			
 			if (player1Points >= 4 && player1Points - player2Points == 1)
