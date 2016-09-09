@@ -61,5 +61,136 @@ public class TennisGameTest {
 		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
-	}		
+	}	
+	
+	@Test
+	public void testTennisGame_player1ShouldHaveAdvantage() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 1 Advantage not detected", "player1 has advantage", score);
+		
+	}
+	
+	@Test
+	public void testTennisGame_player2ShouldHaveAdvantage() throws TennisGameException{
+TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 2 Advantage not detected", "player2 has advantage", score);
+	}
+	
+	@Test
+	public void testTennisGame_player1ShouldWinWithPlayer2NotScoring() throws TennisGameException {
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 1 doesn't win.", "player1 wins", score);
+	}
+	
+	@Test
+	public void testTennisGame_player2ShouldWinWithPlayer1NotScoring() throws TennisGameException {
+		TennisGame game = new TennisGame();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 2 doesn't win.", "player2 wins", score);
+	}
+	
+	@Test
+	public void testTennisGame_player1ShouldWinWithPlayer2alsoScoring() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 1 doesn't win with player 2 also scoring.", "player1 wins", score);
+
+	}
+	
+	@Test
+	public void testTennisGame_player2ShouldWinWithPlayer1alsoScoring() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 2 doesn't win with player 1 also scoring.", "player2 wins", score);
+
+	}
+	
+	@Test
+	public void testTennisGame_player1ShouldScore1Point() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 1 didn't score 1 point.", "15 - love", score);
+	}
+	
+	@Test
+	public void testTennisGame_player2ShouldScore1Point() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player2Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 2 didn't score 1 point.", "love - 15", score);
+	}
+	
+	@Test
+	public void testTennisGame_player1ScoresHigherThanPlayer2() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 1 score is not higher than player 2", "30 - 15", score);
+	}
 }
