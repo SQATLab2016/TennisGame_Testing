@@ -109,6 +109,7 @@ TennisGame game = new TennisGame();
 		game.player1Scored();
 		game.player1Scored();
 		game.player1Scored();
+		game.player1Scored();
 		
 		String score = game.getScore();
 		
@@ -119,6 +120,7 @@ TennisGame game = new TennisGame();
 	public void testTennisGame_player2ShouldWinWithPlayer1NotScoring() throws TennisGameException {
 		TennisGame game = new TennisGame();
 		
+		game.player2Scored();
 		game.player2Scored();
 		game.player2Scored();
 		game.player2Scored();
