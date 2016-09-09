@@ -18,6 +18,7 @@ public class TennisGameTest {
 // "player2 has advantage"
 // "player1 wins"
 // "player2 wins"
+	
 	@Test
 	public void testTennisGame_Start() {
 		//Arrange
@@ -61,5 +62,151 @@ public class TennisGameTest {
 		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
-	}		
+	}
+	@Test
+	public void test_Deuce_after_3_wins_row_with_p1_first() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		assertEquals("Deuce not handled properly", "deuce", game.getScore());
+		
+	}
+	@Test
+	public void test_Deuce_after_3_wins_row_with_p2_first() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		assertEquals("Deuce not handled properly", "deuce", game.getScore());
+		
+	}
+	@Test
+	public void test_love_love(){
+		TennisGame game = new TennisGame();
+		
+		assertEquals("Deuce not handled properly", "love - love", game.getScore());
+	}
+	@Test
+	public void test_long_game_with_p1_advantage() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player1Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		assertEquals("P1 advantage not handled correctly in long game", "player1 has advantage", game.getScore());
+		
+	}
+	@Test
+	public void test_game_with_p2_advantage() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		
+		assertEquals("P2 advantage not handled correctly in game", "player2 has advantage", game.getScore());
+		
+	}
+	@Test
+	public void test_game_with_p1_advantage() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player1Scored();
+		
+		assertEquals("P2 advantage not handled correctly in game", "player1 has advantage", game.getScore());
+		
+	}
+	@Test
+	public void test_30_30() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player1Scored();
+		assertEquals("30 - 30 not handled correctly", "30 - 30", game.getScore());
+	}
+	@Test
+	public void test_30_15() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		assertEquals("30 - 15 not handled correctly", "30 - 15", game.getScore());
+	}
+	@Test
+	public void test_15_30() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player2Scored();
+		game.player1Scored();
+		
+		game.player1Scored();
+		assertEquals("15 - 30 not handled correctly", "15 - 30", game.getScore());
+	}
+	@Test 
+	public void test_p1_wins_4_row() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		assertEquals("P1 win conditions not handled properly", "player1 wins", game.getScore());
+	}
+	@Test 
+	public void test_p2_wins_4_row() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		assertEquals("P2 win conditions not handled properly", "player2 wins", game.getScore());
+	}
 }
