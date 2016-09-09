@@ -18,18 +18,18 @@ public class TennisGameTest {
 	public void testTennisGame_EahcPlayerWin4Points_Score_Deuce() throws TennisGameException {
 		//Arrange
 		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player2Scored();
 		//Act
-		game.player1Scored();
-		game.player1Scored();
-		game.player1Scored();
-		
-		game.player2Scored();
-		game.player2Scored();
-		game.player2Scored();
-		
-		game.player1Scored();
-		game.player2Scored();
-		
 		String score = game.getScore() ;
 		// Assert
 		assertEquals("Tie score incorrect", "deuce", score);		
@@ -44,6 +44,7 @@ public class TennisGameTest {
 		game.player1Scored();
 		game.player1Scored();
 		game.player1Scored();
+		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
 	}		
