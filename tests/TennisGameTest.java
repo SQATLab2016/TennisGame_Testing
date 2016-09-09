@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.Before;
 
 public class TennisGameTest {
 	
@@ -18,31 +19,30 @@ public class TennisGameTest {
 // "player2 has advantage"
 // "player1 wins"
 // "player2 wins"
-	@Test
-	public void testTennisGame_Start() {
-		//Arrange
-		TennisGame game = new TennisGame();
+	private static final String PLAYER1_WINS = "player1 wins";
+	private static final String PLAYER1_HAS_ADVANTAGE = "player1 has advantage";
+	
+	public TennisGame game = new TennisGame();
+	
+
+	
+	@Before 
+	public void test_PlayTillDeuce() throws TennisGameException {
+
 		//Act
-		String score = game.getScore() ;
-		// Assert
-		assertEquals("Initial score incorrect", "love - love", score);		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+	
 	}
 	
 	@Test
 	public void testTennisGame_EahcPlayerWin4Points_Score_Deuce() throws TennisGameException {
-		//Arrange
-		TennisGame game = new TennisGame();
 		
-		game.player1Scored();
-		game.player1Scored();
-		game.player1Scored();
-		
-		game.player2Scored();
-		game.player2Scored();
-		game.player2Scored();
-		
-		game.player1Scored();
-		game.player2Scored();
 		//Act
 		String score = game.getScore() ;
 		// Assert
@@ -51,8 +51,7 @@ public class TennisGameTest {
 	
 	@Test (expected = TennisGameException.class)
 	public void testTennisGame_Player1WinsPointAfterGameEnded_ResultsException() throws TennisGameException {
-		//Arrange
-		TennisGame game = new TennisGame();
+		
 		//Act
 		game.player1Scored();
 		game.player1Scored();
@@ -61,5 +60,20 @@ public class TennisGameTest {
 		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
-	}		
+	}
+	
+	
+	@Test 
+	public void testTennisGame_Player1HasAdvantage() throws TennisGameException {
+
+		//Act
+		
+		game.player1Scored();
+		
+		//Act
+		String score = game.getScore() ;
+
+		// Assert
+		assertEquals("player1 has advantage", PLAYER1_HAS_ADVANTAGE, score);
+	}
 }
