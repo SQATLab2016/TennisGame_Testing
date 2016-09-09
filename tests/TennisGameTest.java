@@ -1,10 +1,13 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TennisGameTest {
 	
-// Here is the format of the scores: "player1Score - player2Score"
+private static final String LOVE_LOVE = "love - love";
+
+	// Here is the format of the scores: "player1Score - player2Score"
 // "love - love"
 // "15 - 15"
 // "30 - 30"
@@ -18,6 +21,26 @@ public class TennisGameTest {
 // "player2 has advantage"
 // "player1 wins"
 // "player2 wins"
+
+	public TennisGame game;
+	
+	
+	public TennisGameTest() {
+		game = new TennisGame();
+	}
+	
+	@Before
+	public void playTillDeuce() throws TennisGameException {
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+	}
+	
+
 	@Test
 	public void testTennisGame_Start() {
 		//Arrange
@@ -25,22 +48,12 @@ public class TennisGameTest {
 		//Act
 		String score = game.getScore() ;
 		// Assert
-		assertEquals("Initial score incorrect", "love - love", score);		
+		assertEquals("Initial score incorrect", LOVE_LOVE, score);		
 	}
 	
 	@Test
 	public void testTennisGame_EahcPlayerWin4Points_Score_Deuce() throws TennisGameException {
-		//Arrange
-		TennisGame game = new TennisGame();
-		
-		game.player1Scored();
-		game.player1Scored();
-		game.player1Scored();
-		
-		game.player2Scored();
-		game.player2Scored();
-		game.player2Scored();
-		
+		//Arrange		
 		game.player1Scored();
 		game.player2Scored();
 		//Act
@@ -113,14 +126,7 @@ public class TennisGameTest {
 	@Test
 	public void testTennisGame_Player1hasAdvantage() throws TennisGameException {
 		//Arrange
-		TennisGame game = new TennisGame();
 		//Act
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
 		game.player1Scored();
 		//Act
 		String score = game.getScore() ;
@@ -132,14 +138,7 @@ public class TennisGameTest {
 	@Test
 	public void testTennisGame_Player2hasAdvantage() throws TennisGameException {
 		//Arrange
-		TennisGame game = new TennisGame();
 		//Act
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
 		game.player2Scored();
 		//Act
 		String score = game.getScore() ;
@@ -151,14 +150,7 @@ public class TennisGameTest {
 	@Test
 	public void testTennisGame_Player1WinsAfterAdvantage() throws TennisGameException {
 		//Arrange
-		TennisGame game = new TennisGame();
 		//Act
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
 		game.player1Scored();
 		game.player1Scored();
 		//Act
@@ -171,14 +163,7 @@ public class TennisGameTest {
 	@Test
 	public void testTennisGame_Player2WinsAfterAdvantage() throws TennisGameException {
 		//Arrange
-		TennisGame game = new TennisGame();
 		//Act
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
-		game.player2Scored();
-		game.player1Scored();
 		game.player2Scored();
 		game.player2Scored();
 		//Act
@@ -190,17 +175,7 @@ public class TennisGameTest {
 	
 	@Test
 	public void testTennisGame_EachPlayerWin3Points_Score_Deuce() throws TennisGameException {
-		//Arrange
-		TennisGame game = new TennisGame();
-		
-		game.player1Scored();
-		game.player1Scored();
-		game.player1Scored();
-		
-		game.player2Scored();
-		game.player2Scored();
-		game.player2Scored();
-		
+		//Arrange		
 		//Act
 		String score = game.getScore() ;
 		// Assert
