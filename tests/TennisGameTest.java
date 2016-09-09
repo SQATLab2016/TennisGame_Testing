@@ -103,7 +103,7 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 				
 		// Assert
-		assertEquals("Tie score incorrect", "player1 wins", score);				
+		assertEquals("Player 1 wins test incorrect", "player1 wins", score);				
 	}	
 	
 	
@@ -120,7 +120,7 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 		
 		// Assert
-		assertEquals("Tie score incorrect", "player2 wins", score);				
+		assertEquals("Player 2 wins test incorrect", "player2 wins", score);				
 	}
 	
 	@Test
@@ -132,7 +132,7 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 				
 		// Assert
-		assertEquals("Tie score incorrect", "player1 has advantage", score);				
+		assertEquals("Player 1 has advantage test incorrect", "player1 has advantage", score);				
 	}	
 	
 	@Test
@@ -144,7 +144,7 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 				
 		// Assert
-		assertEquals("Tie score incorrect", "player2 has advantage", score);				
+		assertEquals("Player 2 has advantage test incorrect", "player2 has advantage", score);				
 	}
 	
 	@Test
@@ -157,7 +157,7 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 				
 		// Assert
-		assertEquals("Tie score incorrect", "player1 wins", score);				
+		assertEquals("Player 1 wins after advantage test incorrect", "player1 wins", score);				
 	}
 	
 	@Test
@@ -170,7 +170,7 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 				
 		// Assert
-		assertEquals("Tie score incorrect", "player2 wins", score);				
+		assertEquals("Player 2 wins after advantage test incorrect", "player2 wins", score);				
 	}
 	
 	@Test
@@ -179,7 +179,7 @@ private static final String LOVE_LOVE = "love - love";
 		//Act
 		String score = game.getScore() ;
 		// Assert
-		assertEquals("Tie score incorrect", "deuce", score);		
+		assertEquals("Tie score  incorrect", "deuce", score);		
 	}
 	
 	@Test
@@ -197,7 +197,7 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 				
 		// Assert
-		assertEquals("Tie score incorrect", "player1 wins", score);				
+		assertEquals("player 1 wins having 2 more points test incorrect", "player1 wins", score);				
 	}	
 	
 	@Test
@@ -213,6 +213,6 @@ private static final String LOVE_LOVE = "love - love";
 		String score = game.getScore() ;
 				
 		// Assert
-		assertEquals("Tie score incorrect", "15 - 40", score);				
+		assertEquals("15 - 40 score incorrect", "15 - 40", score);				
 	}	
 }
