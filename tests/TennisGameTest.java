@@ -28,6 +28,44 @@ public class TennisGameTest {
 		assertEquals("Initial score incorrect", "love - love", score);		
 	}
 	
+	@Test 
+	public void testTennisGame_EahcPlayerWin3Points_Score_Deuce() throws TennisGameException {
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		String score = game.getScore() ;
+		
+		assertEquals("score is incorrect", "deuce", score);	
+		
+	}	
+	
+	@Test 
+	public void testTennisGame_Player2HasAdvantage() throws TennisGameException {
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player2Scored();
+		
+		String score = game.getScore() ;
+		
+		assertEquals("score is incorrect", "player2 has advantage", score);	
+		
+	}	
+	
 	@Test
 	public void testTennisGame_EahcPlayerWin4Points_Score_Deuce() throws TennisGameException {
 		//Arrange
