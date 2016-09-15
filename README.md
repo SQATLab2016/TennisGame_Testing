@@ -1,4 +1,0 @@
-GildedRose
-==========
-
-GildedRose exercise
