@@ -10,3 +10,6 @@ EditAction 1474981606025 TennisGameTest.java 1895 4 26 3
 UnitTestCaseAction 1474981606441 TennisGameTest.java OK
 UnitTestSessionAction 1474981606441 TennisGameTest.java OK
 EditAction 1474981616794 TennisGameTest.java 1897 4 25 3
+UnitTestCaseAction 1474981617249 TennisGameTest.java OK
+UnitTestSessionAction 1474981617249 TennisGameTest.java OK
+EditAction 1474981631858 TennisGameTest.java 1893 4 27 3
