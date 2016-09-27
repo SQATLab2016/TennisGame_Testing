@@ -73,8 +73,7 @@ public class TennisGameTest {
 		game.player1Scored();
 		game.player1Scored();
 		game.player1Scored();
-		//Act
-		// This statement should cause an exception
+		
 		String score = game.getScore();	
 		assertEquals("The winner is", "player2 wins", score);
 		
