@@ -25,7 +25,7 @@ public class TennisGameTest {
 		//Act
 		String score = game.getScore() ;
 		// Assert
-		assertEquals("Initial score incorrect", "love - love", score);		
+		assertEquals("Initial score incorrect", "0 - 0", score);		
 	}
 	
 	@Test
@@ -50,6 +50,8 @@ public class TennisGameTest {
 	}
 	
 	@Test (expected = TennisGameException.class)
+	
+	
 	public void testTennisGame_Player1WinsPointAfterGameEnded_ResultsException() throws TennisGameException {
 		//Arrange
 		TennisGame game = new TennisGame();
@@ -61,5 +63,20 @@ public class TennisGameTest {
 		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
-	}		
+	}
+	
+	public void testTennisGame_Player1Wins() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		//Act
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		//Act
+		// This statement should cause an exception
+		String score = game.getScore();	
+		assertEquals("The winner is", "player1 wins", score);
+		
+	}	
 }
