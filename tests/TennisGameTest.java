@@ -73,9 +73,8 @@ public class TennisGameTest {
 		game.player1Scored();
 		game.player1Scored();
 		game.player1Scored();
-		
 		String score = game.getScore();	
-		assertEquals("The winner is", "player1 wins", score);
+		assertEquals("The winner is", "player2 wins", score);
 		
 	}	
 }
