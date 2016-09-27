@@ -4,3 +4,6 @@ UnitTestSessionAction 1474981237506 TennisGameTest.java OK
 RefactoringAction 1474981383310 TennisGameTest.java ADD void testTennisGame_Player1WinsPointAfterGameEnded_ResultsException()/2 METHOD
 RefactoringAction 1474981395981 TennisGameTest.java RENAME testTennisGame_Player1WinsPointAfterGameEnded_ResultsException()/2=>void testTennisGame_Player1Wins() METHOD
 EditAction 1474981588350 TennisGameTest.java 1893 4 27 3
+UnitTestCaseAction 1474981589134 TennisGameTest.java OK
+UnitTestSessionAction 1474981589150 TennisGameTest.java OK
+EditAction 1474981606025 TennisGameTest.java 1895 4 26 3
