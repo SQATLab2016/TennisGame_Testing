@@ -71,7 +71,7 @@ public class TennisGameTest {
 		//Act
 		game.player1Scored();
 		game.player1Scored();
-		game.player1Scored();
+		//game.player1Scored();
 	//	game.player1Scored();
 		//Act
 		// This statement should cause an exception
