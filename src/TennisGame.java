@@ -23,7 +23,7 @@ public class TennisGame {
 	
 	private String getScore(int points) {
 		switch (points)	{
-		case 0: return "love";
+		case 0: return "0";
 		case 1: return "15" ;
 		case 2: return "30" ;
 		case 3: return "40";
@@ -52,14 +52,15 @@ public class TennisGame {
 	}
 	
 	public String getScore() {
+		
 // Here is the format of the scores:
-// "love - love"
+// "0 - 0"
 // "15 - 15"
 // "30 - 30"
 // "deuce"
-// "15 - love", "love - 15"
-// "30 - love", "love - 30"
-// "40 - love", "love - 40"
+// "15 - 0", "0 - 15"
+// "30 - 0", "0 - 30"
+// "40 - 0", "0 - 40"
 // "30 - 15", "15 - 30"
 // "40 - 15", "15 - 40"
 // "player1 has advantage"

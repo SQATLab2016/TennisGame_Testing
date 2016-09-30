@@ -1,0 +1,22 @@
+FileOpenedAction 1474981233035 TennisGameException.java 57 0 0 0
+UnitTestCaseAction 1474981237506 TennisGameTest.java OK
+UnitTestSessionAction 1474981237506 TennisGameTest.java OK
+RefactoringAction 1474981383310 TennisGameTest.java ADD void testTennisGame_Player1WinsPointAfterGameEnded_ResultsException()/2 METHOD
+RefactoringAction 1474981395981 TennisGameTest.java RENAME testTennisGame_Player1WinsPointAfterGameEnded_ResultsException()/2=>void testTennisGame_Player1Wins() METHOD
+EditAction 1474981588350 TennisGameTest.java 1893 4 27 3
+UnitTestCaseAction 1474981589134 TennisGameTest.java OK
+UnitTestSessionAction 1474981589150 TennisGameTest.java OK
+EditAction 1474981606025 TennisGameTest.java 1895 4 26 3
+UnitTestCaseAction 1474981606441 TennisGameTest.java OK
+UnitTestSessionAction 1474981606441 TennisGameTest.java OK
+EditAction 1474981616794 TennisGameTest.java 1897 4 25 3
+UnitTestCaseAction 1474981617249 TennisGameTest.java OK
+UnitTestSessionAction 1474981617249 TennisGameTest.java OK
+EditAction 1474981631858 TennisGameTest.java 1893 4 27 3
+UnitTestCaseAction 1474981634260 TennisGameTest.java OK
+UnitTestSessionAction 1474981634260 TennisGameTest.java OK
+EditAction 1474981754276 TennisGameTest.java 1842 4 27 3
+EditAction 1474981776441 TennisGameTest.java 1842 4 27 3
+UnitTestCaseAction 1474981778436 TennisGameTest.java OK
+UnitTestSessionAction 1474981778437 TennisGameTest.java OK
+EditAction 1474982016716 TennisGameTest.java 1839 4 27 3
