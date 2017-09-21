@@ -63,5 +63,69 @@ public class TennisGameTest {
 		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
-	}		
+	}	
+	
+	@Test 
+	public void testIfPlayer1HasAdvantageWhen1PointAbovePlayer2() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		String score = game.getScore();
+		
+		assertEquals("Player 1 is winning player 2 by 1 point", "player1 has advantage", score);
+		
+	}
+	
+	@Test
+	public void testIfPlayer2WinsIfMorePointsThanPlayer1() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+	
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		String score = game.getScore();
+		assertEquals("Player 2 wins", "player2 wins", score);
+	}
+	
+	@Test
+	public void testIfGameStarts() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+	}
+	
+	@Test
+	public void testThatPlayerScoreIncreasesWhenPlayerScores() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		
+		  game.player1Scored();
+		  String score = game.getScore();
+		  
+		  assertEquals("Player1 has one score", 1, score);
+
+	}
+	
 }
+
+
