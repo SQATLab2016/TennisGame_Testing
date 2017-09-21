@@ -83,9 +83,15 @@ public class TennisGame {
 			if (player1Points >= 4 && player1Points - player2Points == 1)
 				return "player1 has advantage";
 			
-			if (player2Points > 4 && player2Points - player1Points == 1)
-				return "player2 has advantage";							
+			if (player2Points >= 4 && player2Points - player1Points == 1)
+				return "player2 has advantage";	
 			
-			return  player2Score + " - " + player1Score ;
+			if (player1Points == 0 && player2Points == 1) {
+				return "love - " + player2Score;
+			} else if (player2Points == 0 && player1Points == 1) {
+				return player1Score + " - love";
+			} else {
+				return  player2Score + " - " + player1Score ;
+			}
 	}
 }
