@@ -63,5 +63,91 @@ public class TennisGameTest {
 		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
-	}		
+	}
+	
+	@Test
+	public void testTennisGame_15toLove() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		//Act
+		String score = game.getScore();
+		//Assert
+		assertEquals("15 to love score incorrect", "15 - love", score);
+	}
+	
+	@Test
+	public void testTennisGame_loveTo15() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		game.player2Scored();
+		//Act
+		String score = game.getScore();
+		//Assert
+		assertEquals("Love to 15 score incorrect", "love - 15", score);
+	}
+	
+	@Test
+	public void testTennisGame_player1HasAdvantage() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player1Scored();
+		//Act
+		String score = game.getScore();
+		//Assert
+		assertEquals("Player1 advantage score incorrect", "player1 has advantage", score);
+	}
+	
+	@Test
+	public void testTennisGame_player2HasAdvantage() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player2Scored();
+		//Act
+		String score = game.getScore();
+		//Assert
+		assertEquals("Player2 advantage score incorrect", "player2 has advantage", score);
+	}
+	
+	@Test
+	public void testTennisGame_gamePlayer1() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		//Act
+		String score = game.getScore();
+		//Assert
+		assertEquals("Player1 win incorrect", "player1 wins", score);
+	}
+	
+	@Test
+	public void testTennisGame_gamePlayer2() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		game.player2Scored();
+		game.player1Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		//Act
+		String score = game.getScore();
+		//Assert
+		assertEquals("Player2 win incorrect", "player2 wins", score);
+	}
 }
