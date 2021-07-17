@@ -72,9 +72,9 @@ public class TennisGame {
 			
 			if (gameEnded) {
 				if (player1Points > player2Points)
-					return "player1 wins";
+					return "Player1 wins";
 				else
-					return "player2 wins";
+					return "Player2 wins";
 			}
 			
 			if (player1Points >= 4 && player1Points == player2Points)
